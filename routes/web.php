@@ -13,10 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])
+->middleware('auth')
+->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+->middleware('auth')
+->name('home');
+
+Route::get('edit/{id}', [App\Http\Controllers\HomeController::class, 'edit'])
+->middleware('auth')
+->name('edit');
+
+

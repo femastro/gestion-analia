@@ -29,4 +29,9 @@ class HomeController extends Controller
         $states = DB::table('provincias')->get();
         return view('home', compact('posts'), compact('states'));
     }
+    public function edit($id){
+        $post = DB::table('posts')->where('id',$id)->get();
+        $states = DB::table('provincias')->get();
+        return view('editForm', compact('post'), compact('states'));
+    }
 }

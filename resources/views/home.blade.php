@@ -34,7 +34,7 @@
                                         <td>{{ $post->description }}</td>
                                         <td>{{ $post->imagen }}</td>
                                         <th scope="col">
-                                            <a class="btn btn-primary" href="">Edit</a>
+                                            <a class="btn btn-primary" href="{{ route('edit', $post->id) }}">Edit</a>
                                             <a class="btn btn-danger" href="">Borra</a>
                                         </th>
                                     </tr>
